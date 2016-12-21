@@ -33,4 +33,4 @@ _permissions.define_permission('content_digest.settings.manage', 'content_digest
 
 # Settings
 _settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket',
-                'content_digest.settings.manage')
+                 'content_digest.settings.manage')

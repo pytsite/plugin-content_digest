@@ -1,8 +1,8 @@
 {
   "description": {
     "en": "Content digest",
-    "ru": "Дайджест",
-    "uk": "Дайджест"
+    "ru": "Дайджест контента",
+    "uk": "Дайджест контенту"
   },
   "url": "https://github.com/pytsite/plugin-content_digest",
   "author": {

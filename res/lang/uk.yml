@@ -1,4 +1,4 @@
-content_digest: 'Розсилка'
+content_digest: 'Дайджест контенту'
 digest_subscription_success: 'Дякуємо за підписку на наш дайджест!'
 unsubscription_successful: 'Вас було успішно відписано від розсилки'
 weekly_digest_mail_subject: 'Кращі публікації за тиждень на :app_name'

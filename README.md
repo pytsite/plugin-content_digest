@@ -3,6 +3,10 @@
 
 ## Changelog
 
+### 0.1.2 (2016-12-21)
+Widget's CSS fixed.
+
+
 ### 0.1.1 (2016-12-19)
 plugin.json updated.
 
