@@ -1,8 +1,9 @@
 """PytSite Content Digest Plugin Event Handlers.
 """
 from datetime import datetime as _datetime, timedelta as _timedelta
-from pytsite import reg as _reg, lang as _lang, logger as _logger, content as _content, odm as _odm, mail as _mail, \
-    tpl as _tpl, settings as _settings
+from pytsite import reg as _reg, lang as _lang, logger as _logger, odm as _odm, mail as _mail, tpl as _tpl, \
+    settings as _settings
+from plugins import content as _content
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'

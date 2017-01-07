@@ -3,6 +3,10 @@
 
 ## Changelog
 
+### 0.2 (2017-01-08)
+Support for `content` as separate plugin.
+
+
 ### 0.1.2 (2016-12-21)
 Widget's CSS fixed.
 

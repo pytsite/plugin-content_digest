@@ -1,6 +1,7 @@
 """PytSite Content Digest Plugin Settings Form.
 """
-from pytsite import lang as _lang, settings as _settings, content as _content, widget as _widget
+from pytsite import lang as _lang, settings as _settings, widget as _widget
+from plugins import content as _content
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
