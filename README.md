@@ -3,6 +3,11 @@
 
 ## Changelog
 
+
+### 0.2.1 (2017-01-12)
+Support for latest PytSite `form`'s changes.
+
+
 ### 0.2 (2017-01-08)
 Support for `content` as separate plugin.
 

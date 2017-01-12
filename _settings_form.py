@@ -9,7 +9,7 @@ __license__ = 'MIT'
 
 
 class Form(_settings.Form):
-    def _setup_widgets(self):
+    def _on_setup_widgets(self):
         """Hook.
         """
         self.add_widget(_widget.input.Integer(
@@ -27,4 +27,4 @@ class Form(_settings.Form):
             label=_lang.t('content_digest@content_models'),
         ))
 
-        super()._setup_widgets()
+        super()._on_setup_widgets()
