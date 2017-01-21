@@ -22,7 +22,7 @@ class Subscribe(_pytsite_widget.Abstract):
         self.assets.append('content_digest@css/widget.css')
         self.assets.append('content_digest@js/widget.js')
 
-    def get_html_em(self, **kwargs):
+    def _get_element(self, **kwargs):
         root = _html.TagLessElement()
 
         root.append(_html.H3(self.title, cls='widget-title'))
