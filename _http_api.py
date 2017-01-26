@@ -7,11 +7,11 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def post_subscribe(**kwargs) -> dict:
+def post_subscribe(inp: dict) -> dict:
     """Subscribe to digest endpoint.
     """
     lng = _lang.get_current()
-    email = _validation.rule.Email(value=kwargs.get('email')).validate()
+    email = _validation.rule.Email(value=inp.get('email')).validate()
 
     # Search for subscriber
     s = _odm.find('content_subscriber').eq('email', email).eq('language', lng).first()
