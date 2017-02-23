@@ -3,13 +3,16 @@
 
 ## Changelog
 
+### 0.2.4 (2017-02-23)
+Route name updated.
+
 
 ### 0.2.3 (2017-01-26)
 HTTP API update.
 
 
 ### 0.2.2 (2017-01-21)
-Support latest PytSite `widget`'s changes.
+Support for latest PytSite `widget`'s changes.
 
 
 ### 0.2.1 (2017-01-12)
