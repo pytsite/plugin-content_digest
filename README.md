@@ -3,6 +3,11 @@
 
 ## Changelog
 
+
+### 0.2.5 (2017-03-03)
+Support for latest PytSite router's API function rename.
+
+
 ### 0.2.4 (2017-02-23)
 Route name updated.
 
