@@ -25,20 +25,20 @@ class Subscribe(_pytsite_widget.Abstract):
     def _get_element(self, **kwargs):
         root = _html.TagLessElement()
 
-        root.append(_html.H3(self.title, cls='widget-title'))
+        root.append(_html.H3(self.title, css='widget-title'))
 
         form = _html.Form()
-        form.append(_html.Label(_lang.t('content_digest@your_email'), cls='sr-only'))
+        form.append(_html.Label(_lang.t('content_digest@your_email'), css='sr-only'))
         form.append(_html.Input(
             type='text',
             name='email',
-            cls='form-control',
+            css='form-control',
             placeholder=_lang.t('content_digest@your_email'),
             required=True,
         ))
         form.append(_html.Button(
             content=_lang.t('content_digest@ok'),
-            cls='btn btn-primary',
+            css='btn btn-primary',
             type='submit',
         ))
 
