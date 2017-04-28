@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3 (2017-04-28)
+Support for latest PytSite asset management changes.
+
+
 ### 0.2.6 (2017-03-21)
 Support for latest PytSite `widget`'s changes.
 

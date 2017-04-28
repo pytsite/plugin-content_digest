@@ -18,9 +18,8 @@ class Subscribe(_pytsite_widget.Abstract):
 
         super().__init__(uid, **kwargs)
 
-        self.css += ' widget-content-digest-subscribe'
-        self.assets.append('content_digest@css/widget.css')
-        self.assets.append('content_digest@js/widget.js')
+        self._css += ' widget-content-digest-subscribe'
+        self._js_module = 'content-digest-widget-subscribe'
 
     def _get_element(self, **kwargs):
         root = _html.TagLessElement()
