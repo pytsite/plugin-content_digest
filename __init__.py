@@ -17,8 +17,8 @@ _tpl.register_package(__name__, alias='content_digest')
 
 _assetman.register_package(__name__, alias='content_digest')
 _assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
-_assetman.t_less(__name__ + '@css/**', 'css')
-_assetman.t_js(__name__ + '@js/**', 'js')
+_assetman.t_less(__name__ + '@**')
+_assetman.t_js(__name__ + '@**')
 
 # ODM models
 _odm.register_model('content_subscriber', _model.ContentSubscriber)
