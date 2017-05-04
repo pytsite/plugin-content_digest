@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.2 (2017-05-04)
+Fixed incorrect asset's path.
+
+
 ### 0.3.1 (2017-05-04)
 Fixed assets issues.
 

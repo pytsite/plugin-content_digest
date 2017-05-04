@@ -1,5 +1,5 @@
 define(['assetman', 'pytsite-http-api'], function (assetman, httpApi) {
-    assetman.loadCSS('plugins.content_digest@content-digest-widget-subscribe.css');
+    assetman.loadCSS('plugins.content_digest@css/content-digest-widget-subscribe.css');
 
     return function (widget) {
         var form = widget.em.find('form');
