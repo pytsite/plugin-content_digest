@@ -7,10 +7,10 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def unsubscribe(args: dict, inp: dict) -> _http.response.Redirect:
+def unsubscribe(sid: str) -> _http.response.Redirect:
     """Unsubscribe from content digest.
     """
-    s = _odm.dispense('content_subscriber', args.get('id'))
+    s = _odm.dispense('content_subscriber', sid)
     if s:
         with s:
             s.f_set('enabled', False).save()

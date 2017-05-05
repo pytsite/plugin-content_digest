@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.3 (2017-05-05)
+Updated controllers' signatures.
+
+
 ### 0.3.2 (2017-05-04)
 Fixed incorrect asset's path.
 

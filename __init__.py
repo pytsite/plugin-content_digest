@@ -27,7 +27,7 @@ _odm.register_model('content_subscriber', _model.ContentSubscriber)
 _events.listen('pytsite.cron.weekly', _eh.cron_weekly)
 
 # Routes
-_router.handle('/content_digest/unsubscribe/<id>', 'plugins.content_digest@unsubscribe', 'content_digest@unsubscribe')
+_router.handle('/content_digest/unsubscribe/<sid>', 'plugins.content_digest@unsubscribe', 'content_digest@unsubscribe')
 
 # HTTP API handlers
 _p_http_api.handle('POST', 'content_digest/subscribe', _http_api.post_subscribe, 'content_digest@post_subscribe')
