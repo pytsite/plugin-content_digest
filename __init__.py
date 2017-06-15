@@ -3,9 +3,9 @@
 # Public API
 from . import _widget as widget
 
-from pytsite import events as _events, odm as _odm, http_api as _p_http_api, router as _router, lang as _lang, \
+from pytsite import events as _events, odm as _odm, http_api as _http_api, router as _router, lang as _lang, \
     tpl as _tpl, assetman as _assetman, permissions as _permissions, settings as _settings
-from . import _eh, _model, _settings_form, _http_api
+from . import _eh, _model, _settings_form, _controllers, _http_api_controllers
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -27,10 +27,11 @@ _odm.register_model('content_subscriber', _model.ContentSubscriber)
 _events.listen('pytsite.cron.weekly', _eh.cron_weekly)
 
 # Routes
-_router.handle('/content_digest/unsubscribe/<sid>', 'plugins.content_digest@unsubscribe', 'content_digest@unsubscribe')
+_router.handle(_controllers.Unsubscribe(), '/content_digest/unsubscribe/<sid>', 'content_digest@unsubscribe')
 
 # HTTP API handlers
-_p_http_api.handle('POST', 'content_digest/subscribe', _http_api.post_subscribe, 'content_digest@post_subscribe')
+_http_api.handle('POST', 'content_digest/subscribe', _http_api_controllers.PostSubscribe(),
+                   'content_digest@post_subscribe')
 
 # Permissions
 _permissions.define_permission('content_digest.settings.manage', 'content_digest@manage_content_digest_settings', 'app')

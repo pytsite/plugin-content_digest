@@ -19,7 +19,7 @@
             <p>&copy; <a href="{{ base_url(language) }}">{{ t('app@app_name', {}, language) }}</a></p>
         </td>
         <td style="width: 50%; padding: 15px 5px; font-size: 12px; text-align: right;">
-            <a href="{{ ep_url('content_digest@unsubscribe', {'lang': language, 'id': subscriber.id}) }}">{{ t('content_digest@unsubscribe', {}, language) }}</a>
+            <a href="{{ rule_url('content_digest@unsubscribe', {'lang': language, 'id': subscriber.id}) }}">{{ t('content_digest@unsubscribe', {}, language) }}</a>
         </td>
     </tr>
 </table>
