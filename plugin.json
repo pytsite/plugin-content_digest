@@ -1,4 +1,6 @@
 {
+  "name": "plugins.content_digest",
+  "version": "0.3.5",
   "description": {
     "en": "Content digest",
     "ru": "Дайджест контента",
