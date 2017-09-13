@@ -13,8 +13,7 @@ class Unsubscribe(_routing.Controller):
         """
         s = _odm.dispense('content_subscriber', self.arg('uid'))
         if s:
-            with s:
-                s.f_set('enabled', False).save()
+            s.f_set('enabled', False).save()
             _router.session().add_success_message(_lang.t('content_digest@unsubscription_successful'))
 
         return self.redirect(_router.base_url())

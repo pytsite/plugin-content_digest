@@ -23,7 +23,6 @@ class PostSubscribe(_routing.Controller):
             s = _odm.dispense('content_subscriber').f_set('email', email).f_set('language', lng).save()
 
         # Enable subscriber
-        with s:
-            s.f_set('enabled', True).save()
+        s.f_set('enabled', True).save()
 
         return {'message': _lang.t('content_digest@digest_subscription_success')}
