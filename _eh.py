@@ -17,7 +17,7 @@ def cron_weekly():
     if not model:
         return
 
-    app_name = _lang.t('app@app_name')
+    app_name = _lang.t('app_name')
     entities_num = _settings.get('content_digest.entities_number', 10)
     pub_period = _datetime.now() - _timedelta(7)
 

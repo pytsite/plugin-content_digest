@@ -16,7 +16,7 @@
 <table style="width: 100%; margin: 10px 0 0 0;">
     <tr>
         <td style="width: 50%; padding: 15px 5px; font-size: 12px; text-align: left;">
-            <p>&copy; <a href="{{ base_url(language) }}">{{ t('app@app_name', {}, language) }}</a></p>
+            <p>&copy; <a href="{{ base_url(language) }}">{{ t('app_name', {}, language) }}</a></p>
         </td>
         <td style="width: 50%; padding: 15px 5px; font-size: 12px; text-align: right;">
             <a href="{{ rule_url('content_digest@unsubscribe', {'lang': language, 'id': subscriber.id}) }}">{{ t('content_digest@unsubscribe', {}, language) }}</a>
