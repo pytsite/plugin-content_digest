@@ -1,10 +1,11 @@
-"""PytSite Content Digest Plugin.
+"""PytSite Content Digest Plugin
 """
 # Public API
 from . import _widget as widget
 
-from pytsite import events as _events, odm as _odm, http_api as _http_api, router as _router, lang as _lang, \
-    tpl as _tpl, assetman as _assetman, permissions as _permissions, settings as _settings
+from pytsite import events as _events, router as _router, lang as _lang, tpl as _tpl
+from plugins import permissions as _permissions, odm as _odm, settings as _settings, assetman as _assetman, \
+    http_api as _http_api
 from . import _eh, _model, _settings_form, _controllers, _http_api_controllers
 
 __author__ = 'Alexander Shepetko'
@@ -12,10 +13,10 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 # Resources
-_lang.register_package(__name__, alias='content_digest')
-_tpl.register_package(__name__, alias='content_digest')
+_lang.register_package(__name__)
+_tpl.register_package(__name__)
 
-_assetman.register_package(__name__, alias='content_digest')
+_assetman.register_package(__name__)
 _assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
 _assetman.t_less(__name__ + '@**')
 _assetman.t_js(__name__ + '@**')

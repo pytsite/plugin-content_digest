@@ -1,4 +1,4 @@
-define(['assetman', 'pytsite-http-api'], function (assetman, httpApi) {
+define(['assetman', 'http-api'], function (assetman, httpApi) {
     assetman.loadCSS('plugins.content_digest@css/content-digest-widget-subscribe.css');
 
     return function (widget) {

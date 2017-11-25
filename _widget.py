@@ -1,6 +1,7 @@
-"""PytSite Content Digest Plugin Widgets.
+"""PytSite Content Digest Plugin Widgets
 """
-from pytsite import widget as _pytsite_widget, html as _html, lang as _lang
+from pytsite import html as _html, lang as _lang
+from plugins import widget as _pytsite_widget
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'

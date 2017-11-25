@@ -1,6 +1,7 @@
-"""PytSite Content Digest HTTP API Endpoints.
+"""PytSite Content Digest HTTP API Controllers
 """
-from pytsite import validation as _validation, lang as _lang, odm as _odm, routing as _routing
+from pytsite import validation as _validation, lang as _lang, routing as _routing
+from plugins import odm as _odm
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'

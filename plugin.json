@@ -1,8 +1,8 @@
 {
   "name": "content_digest",
-  "version": "1.0.1",
+  "version": "2.0",
   "description": {
-    "en": "Content digest",
+    "en": "Content Digest",
     "ru": "Дайджест контента",
     "uk": "Дайджест контенту"
   },
@@ -15,7 +15,12 @@
   "requires": {
     "packages": [],
     "plugins": [
-      "content"
+      "assetman",
+      "content",
+      "http_api",
+      "odm",
+      "permissions",
+      "settings"
     ]
   }
 }
