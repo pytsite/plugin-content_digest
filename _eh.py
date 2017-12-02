@@ -2,7 +2,7 @@
 """
 from datetime import datetime as _datetime, timedelta as _timedelta
 from pytsite import reg as _reg, lang as _lang, logger as _logger, mail as _mail, tpl as _tpl
-from plugins import odm as _odm, content as _content, settings as _settings
+from plugins import odm as _odm, content as _content
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -12,16 +12,16 @@ __license__ = 'MIT'
 def cron_weekly():
     """Send weekly mail digest.
     """
-    model = _settings.get('content_digest.models')
+    model = _reg.get('content_digest.models')
     if not model:
         return
 
     app_name = _lang.t('app_name')
-    entities_num = _settings.get('content_digest.entities_number', 10)
+    entities_num = _reg.get('content_digest.entities_number', 10)
     pub_period = _datetime.now() - _timedelta(7)
 
     entities = []
-    for model in _settings.get('content_digest.models', []):
+    for model in _reg.get('content_digest.models', []):
         f = _content.find(model, language='*').gte('publish_time', pub_period).sort([('views_count', _odm.I_DESC)])
         entities += list(f.get(entities_num))
 
