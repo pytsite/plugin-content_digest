@@ -1,42 +1,47 @@
 """PytSite Content Digest Plugin
 """
-# Public API
-from . import _widget as widget
-
-from pytsite import events as _events, router as _router, lang as _lang, tpl as _tpl
-from plugins import permissions as _permissions, odm as _odm, settings as _settings, assetman as _assetman, \
-    http_api as _http_api
-from . import _eh, _model, _settings_form, _controllers, _http_api_controllers
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-# Resources
-_lang.register_package(__name__)
-_tpl.register_package(__name__)
+from pytsite import plugman as _plugman
 
-_assetman.register_package(__name__)
-_assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
-_assetman.t_less(__name__ + '@**')
-_assetman.t_js(__name__ + '@**')
+if _plugman.is_installed(__name__):
+    # Public API
+    from . import _widget as widget
 
-# ODM models
-_odm.register_model('content_subscriber', _model.ContentSubscriber)
 
-# Event handlers
-_events.listen('pytsite.cron.weekly', _eh.cron_weekly)
+def plugin_load():
+    from pytsite import events, router, lang, tpl
+    from plugins import permissions, odm, settings, assetman, http_api
+    from . import _eh, _model, _settings_form, _controllers, _http_api_controllers
 
-# Routes
-_router.handle(_controllers.Unsubscribe, '/content_digest/unsubscribe/<sid>', 'content_digest@unsubscribe')
+    # Resources
+    lang.register_package(__name__)
+    tpl.register_package(__name__)
 
-# HTTP API handlers
-_http_api.handle('POST', 'content_digest/subscribe', _http_api_controllers.PostSubscribe,
-                   'content_digest@post_subscribe')
+    assetman.register_package(__name__)
+    assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
+    assetman.t_less(__name__)
+    assetman.t_js(__name__)
 
-# Permissions
-_permissions.define_permission('content_digest.settings.manage', 'content_digest@manage_content_digest_settings', 'app')
+    # ODM models
+    odm.register_model('content_subscriber', _model.ContentSubscriber)
 
-# Settings
-_settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket',
-                 'content_digest.settings.manage')
+    # Event handlers
+    events.listen('pytsite.cron@weekly', _eh.cron_weekly)
+
+    # Routes
+    router.handle(_controllers.Unsubscribe, '/content_digest/unsubscribe/<sid>', 'content_digest@unsubscribe')
+
+    # HTTP API handlers
+    http_api.handle('POST', 'content_digest/subscribe', _http_api_controllers.PostSubscribe,
+                     'content_digest@post_subscribe')
+
+    # Permissions
+    permissions.define_permission('content_digest.settings.manage', 'content_digest@manage_content_digest_settings',
+                                   'app')
+
+    # Settings
+    settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket',
+                     'content_digest.settings.manage')
