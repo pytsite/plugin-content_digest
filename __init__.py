@@ -11,18 +11,28 @@ if _plugman.is_installed(__name__):
     from . import _widget as widget
 
 
-def plugin_load():
-    from pytsite import lang, tpl
+def _register_assetman_resources():
     from plugins import assetman
 
-    # Resources
+    if not assetman.is_package_registered(__name__):
+        assetman.register_package(__name__)
+        assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
+        assetman.t_less(__name__)
+        assetman.t_js(__name__)
+
+    return assetman
+
+
+def plugin_install():
+    _register_assetman_resources().build(__name__)
+
+
+def plugin_load():
+    from pytsite import lang, tpl
+
     lang.register_package(__name__)
     tpl.register_package(__name__)
-
-    assetman.register_package(__name__)
-    assetman.js_module('content-digest-widget-subscribe', __name__ + '@js/content-digest-widget-subscribe')
-    assetman.t_less(__name__)
-    assetman.t_js(__name__)
+    _register_assetman_resources()
 
 
 def plugin_load_uwsgi():
@@ -50,11 +60,3 @@ def plugin_load_uwsgi():
     # Settings
     settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket',
                     'content_digest@manage_settings')
-
-
-def plugin_install():
-    from plugins import assetman
-
-    plugin_load()
-    assetman.build(__name__)
-    assetman.build_translations()
