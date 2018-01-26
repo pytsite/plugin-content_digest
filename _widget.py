@@ -1,11 +1,11 @@
 """PytSite Content Digest Plugin Widgets
 """
-from pytsite import html as _html, lang as _lang
-from plugins import widget as _pytsite_widget
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import html as _html, lang as _lang
+from plugins import widget as _pytsite_widget
 
 
 class Subscribe(_pytsite_widget.Abstract):

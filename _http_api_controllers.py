@@ -1,11 +1,11 @@
 """PytSite Content Digest HTTP API Controllers
 """
-from pytsite import validation as _validation, lang as _lang, routing as _routing
-from plugins import odm as _odm
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import validation as _validation, lang as _lang, routing as _routing
+from plugins import odm as _odm
 
 
 class PostSubscribe(_routing.Controller):

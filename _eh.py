@@ -1,12 +1,12 @@
 """PytSite Content Digest Plugin Events Handlers
 """
-from datetime import datetime as _datetime, timedelta as _timedelta
-from pytsite import reg as _reg, lang as _lang, logger as _logger, mail as _mail, tpl as _tpl
-from plugins import odm as _odm, content as _content
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from datetime import datetime as _datetime, timedelta as _timedelta
+from pytsite import reg as _reg, lang as _lang, logger as _logger, mail as _mail, tpl as _tpl
+from plugins import odm as _odm, content as _content
 
 
 def cron_weekly():

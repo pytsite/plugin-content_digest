@@ -1,11 +1,11 @@
 """PytSite Content Digest Plugin Controllers
 """
-from pytsite import routing as _routing, router as _router, lang as _lang
-from plugins import odm as _odm
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import routing as _routing, router as _router, lang as _lang
+from plugins import odm as _odm
 
 
 class Unsubscribe(_routing.Controller):

@@ -1,10 +1,10 @@
 """PytSite Content Digest Plugin Models
 """
-from plugins import odm as _odm
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from plugins import odm as _odm
 
 
 class ContentSubscriber(_odm.model.Entity):

@@ -1,11 +1,11 @@
 """PytSite Content Digest Plugin Settings Form
 """
-from pytsite import lang as _lang
-from plugins import content as _content, settings as _settings, widget as _widget
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import lang as _lang
+from plugins import content as _content, settings as _settings, widget as _widget
 
 
 class Form(_settings.Form):

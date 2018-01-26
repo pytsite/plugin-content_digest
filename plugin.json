@@ -1,6 +1,6 @@
 {
   "name": "content_digest",
-  "version": "2.2.2",
+  "version": "2.3",
   "description": {
     "en": "Content Digest",
     "ru": "Дайджест контента",
@@ -20,8 +20,7 @@
       "font_awesome",
       "http_api",
       "odm",
-      "permissions",
-      "settings"
+      "settings>=1.3"
     ]
   }
 }
