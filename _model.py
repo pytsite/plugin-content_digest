@@ -7,8 +7,8 @@ __license__ = 'MIT'
 from plugins import odm as _odm
 
 
-class ContentSubscriber(_odm.model.Entity):
-    """content_subscriber ODM Model.
+class ContentDigestSubscriber(_odm.model.Entity):
+    """content_digest_subscriber ODM Model
     """
 
     def _setup_fields(self):

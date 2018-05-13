@@ -4,13 +4,17 @@ __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-# Public API
-from . import _widget as widget
 
+# Public API
+from ._api import get_form
 
 def plugin_load():
     from pytsite import lang, tpl
-    from plugins import assetman
+    from plugins import assetman, odm
+    from . import _model
+
+    # ODM models
+    odm.register_model('content_digest_subscriber', _model.ContentDigestSubscriber)
 
     lang.register_package(__name__)
     tpl.register_package(__name__)
@@ -29,14 +33,11 @@ def plugin_install():
 
 def plugin_load_uwsgi():
     from pytsite import router, cron
-    from plugins import odm, settings, http_api
+    from plugins import settings, http_api
     from . import _eh, _model, _settings_form, _controllers, _http_api_controllers
 
-    # ODM models
-    odm.register_model('content_subscriber', _model.ContentSubscriber)
-
     # Event handlers
-    cron.weekly(_eh.cron_weekly)
+    cron.every_min(_eh.on_cron_every_min)
 
     # Routes
     router.handle(_controllers.Unsubscribe, '/content_digest/unsubscribe/<sid>', 'content_digest@unsubscribe')
@@ -46,4 +47,4 @@ def plugin_load_uwsgi():
                     'content_digest@post_subscribe')
 
     # Settings
-    settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket', 'dev')
+    settings.define('content_digest', _settings_form.Form, 'content_digest@content_digest', 'fa fa-rocket')

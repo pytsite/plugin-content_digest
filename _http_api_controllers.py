@@ -17,11 +17,11 @@ class PostSubscribe(_routing.Controller):
         email = _validation.rule.Email(value=self.arg('email')).validate()
 
         # Search for subscriber
-        s = _odm.find('content_subscriber').eq('email', email).eq('language', lng).first()
+        s = _odm.find('content_digest_subscriber').eq('email', email).eq('language', lng).first()
 
         # Create new subscriber
         if not s:
-            s = _odm.dispense('content_subscriber').f_set('email', email).f_set('language', lng).save()
+            s = _odm.dispense('content_digest_subscriber').f_set('email', email).f_set('language', lng).save()
 
         # Enable subscriber
         s.f_set('enabled', True).save()

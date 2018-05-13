@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.0 (2018-05-13)
+
+Totally redesigned.
+
+
 ### 2.3 (2018-01-26)
 
 Support for `settings-1.3`.
