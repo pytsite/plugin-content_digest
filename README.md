@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.0.1 (2018-05-13)
+
+Bugs fixed.
+
+
 ### 3.0 (2018-05-13)
 
 Totally redesigned.

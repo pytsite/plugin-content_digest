@@ -1,6 +1,6 @@
 {
   "name": "content_digest",
-  "version": "3.0",
+  "version": "3.0.1",
   "description": {
     "en": "Content Digest",
     "ru": "Дайджест контента",
@@ -15,7 +15,7 @@
   "requires": {
     "plugins": [
       "assetman",
-      "content",
+      "content>=4.5",
       "font_awesome",
       "form>=4.1",
       "http_api",

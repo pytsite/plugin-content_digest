@@ -27,8 +27,8 @@ def on_cron_every_min():
     now = _datetime.now()
     now_weekday = now.weekday()
 
-    # if now.weekday() not in weekdays or not (time_of_day.hour == now.hour and time_of_day.minute == now.minute):
-    #     return
+    if now.weekday() not in weekdays or not (time_of_day.hour == now.hour and time_of_day.minute == now.minute):
+        return
 
     # Calculate days number to query collections
     prev_weekday = weekdays[weekdays.index(now_weekday) - 1]
@@ -45,6 +45,10 @@ def on_cron_every_min():
         f = _content.find(model, language='*').gte('publish_time', pub_period).sort([('views_count', _odm.I_DESC)])
         entities += list(f.get(entities_num))
 
+    # Nothing to send
+    if not entities:
+        return
+
     # Sort all entities and cut top
     entities = sorted(entities, key=lambda e: e.views_count)[:entities_num]
 
@@ -52,7 +56,7 @@ def on_cron_every_min():
         _logger.info('Preparing content digest for {}'.format(subscriber.f_get('email')))
 
         lng = subscriber.f_get('language')
-        default_m_subject = _lang.t('content_digest@default_mail_subject', lng)
+        default_m_subject = _lang.t('content_digest@default_mail_subject', language=lng)
         m_subject = _reg.get('content_digest.mail_subject_{}'.format(lng), default_m_subject)
         m_body = _tpl.render(_reg.get('content_digest.tpl', 'content_digest@digest'), {
             'entities': entities,

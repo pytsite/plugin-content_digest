@@ -51,6 +51,7 @@ class Form(_settings.Form):
             uid='setting_models',
             weight=40,
             label=_lang.t('content_digest@content_models'),
+            filter=lambda entity: entity.has_field('views_count'),
         ))
 
         w = 50
