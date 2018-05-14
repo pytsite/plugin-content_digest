@@ -35,3 +35,4 @@ class Subscribe(_form.Form):
 
         self.submit_button.form_area = 'body'
         self.submit_button.value = _lang.t('content_digest@ok')
+        self.submit_button.icon = None
