@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.1 (2018-08-08)
+
+Support of `form-4.12`.
+
+
 ### 3.0.2 (2018-05-14)
 
 Buttons icon removed.
