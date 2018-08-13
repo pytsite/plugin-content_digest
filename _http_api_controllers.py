@@ -1,6 +1,6 @@
 """PytSite Content Digest HTTP API Controllers
 """
-__author__ = 'Alexander Shepetko'
+__author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
@@ -26,4 +26,7 @@ class PostSubscribe(_routing.Controller):
         # Enable subscriber
         s.f_set('enabled', True).save()
 
-        return {'message': _lang.t('content_digest@digest_subscription_success')}
+        return {
+            '__alert': _lang.t('content_digest@digest_subscription_success'),
+            '__reset': True,
+        }

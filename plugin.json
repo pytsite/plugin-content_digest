@@ -1,6 +1,6 @@
 {
   "name": "content_digest",
-  "version": "3.1",
+  "version": "3.1.1",
   "description": {
     "en": "Content Digest",
     "ru": "Дайджест контента",
@@ -8,7 +8,7 @@
   },
   "url": "https://github.com/pytsite/plugin-content_digest",
   "author": {
-    "name": "Alexander Shepetko",
+    "name": "Oleksandr Shepetko",
     "email": "a@shepetko.com",
     "url": "https://shepetko.com"
   },

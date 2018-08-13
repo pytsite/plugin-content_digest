@@ -1,11 +1,11 @@
 """PytSite Content Digest Plugin Widgets
 """
-__author__ = 'Alexander Shepetko'
+__author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 from pytsite import lang as _lang
-from plugins import form as _form, widget as _widget
+from plugins import form as _form, widget as _widget, http_api as _http_api
 
 
 class Subscribe(_form.Form):
@@ -16,12 +16,9 @@ class Subscribe(_form.Form):
         if self.title is None:
             self.title = _lang.t('content_digest@subscribe_to_digest')
 
-        self.prevent_submit = True
+        self.action = _http_api.url('content_digest@post_subscribe')
         self.css += ' widget-content-digest-subscribe'
-        self.assets.extend([
-            'content_digest@form.css',
-            'content_digest@form.js',
-        ])
+        self.assets.append('content_digest@form.css')
 
     def _on_setup_widgets(self):
         self.add_widget(_widget.input.Email(

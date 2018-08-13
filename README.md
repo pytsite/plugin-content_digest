@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.1.1 (2018-08-13)
+
+Unwanted page reloading fixed.
+
+
 ### 3.1 (2018-08-08)
 
 Support of `form-4.12`.
