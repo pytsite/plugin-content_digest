@@ -18,7 +18,6 @@ class Subscribe(_form.Form):
 
         self.action = _http_api.url('content_digest@post_subscribe')
         self.css += ' widget-content-digest-subscribe'
-        self.assets.append('content_digest@form.css')
 
     def _on_setup_widgets(self):
         self.add_widget(_widget.input.Email(

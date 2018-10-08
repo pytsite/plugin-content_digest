@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 4.0 (2018-10-08)
+
+Support of `pytsite-8.x` and `assetman-3.x`.
+
+
 ### 3.1.1 (2018-08-13)
 
 Unwanted page reloading fixed.
