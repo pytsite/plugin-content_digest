@@ -1,6 +1,6 @@
 {
   "name": "content_digest",
-  "version": "4.0",
+  "version": "4.1",
   "description": {
     "en": "Content Digest",
     "ru": "Дайджест контента",
@@ -13,9 +13,9 @@
     "url": "https://shepetko.com"
   },
   "requires": {
-    "pytsite": "8.x",
+    "pytsite": ">=8",
     "plugins": {
-      "assetman": "3.x",
+      "assetman": "4.x",
       "content": "5.x",
       "form": "5.x",
       "http_api": "3.x",
