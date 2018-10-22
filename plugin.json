@@ -1,6 +1,6 @@
 {
   "name": "content_digest",
-  "version": "4.1",
+  "version": "4.2",
   "description": {
     "en": "Content Digest",
     "ru": "Дайджест контента",
@@ -15,7 +15,7 @@
   "requires": {
     "pytsite": ">=8",
     "plugins": {
-      "assetman": "4.x",
+      "assetman": "5.x",
       "content": "5.x",
       "form": "5.x",
       "http_api": "3.x",
