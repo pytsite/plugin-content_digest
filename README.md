@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 4.3 (2019-03-04)
+
+Support of `odm-6.0`.
+
+
 ### 4.2 (2018-10-22)
 
 Support of `assetman-5.x`.

@@ -14,9 +14,9 @@ class ContentDigestSubscriber(_odm.model.Entity):
     def _setup_fields(self):
         """Hook.
         """
-        self.define_field(_odm.field.String('email', required=True))
+        self.define_field(_odm.field.String('email', is_required=True))
         self.define_field(_odm.field.Bool('enabled', default=True))
-        self.define_field(_odm.field.String('language', required=True))
+        self.define_field(_odm.field.String('language', is_required=True))
 
     def _setup_indexes(self):
         """Hook.
